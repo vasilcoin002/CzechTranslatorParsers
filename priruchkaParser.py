@@ -13,11 +13,15 @@ def get_filtered_text(dom_elem):
         return text
 
 
+word_to_translate = "máš"
+
 necessary_criteria = [
     "",  # The first row always
     "1. osoba",
     "2. osoba",
     "3. osoba",
+    "příčestí činné",
+    "příčestí trpné",
     "1. pád",
     "2. pád",
     "3. pád",
@@ -32,7 +36,6 @@ headers = {
     "user-agent": useragent.random
 }
 
-word_to_translate = "máš"
 main_link = f"https://prirucka.ujc.cas.cz/?slovo={word_to_translate}"
 req = requests.get(main_link, headers=headers)
 soup = BeautifulSoup(req.text, "html.parser")
