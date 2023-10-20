@@ -22,10 +22,11 @@ necessary_criteria = [
     "Fráze",
     "Synonyma",
     "Antonyma",
-    "Nedokonavé sloveso"
+    "Nedokonavé sloveso",
+    "Dokonavé sloveso"
 ]
 # Parameters
-word_to_translate = "vracet"
+word_to_translate = "vrátit"
 target_language = TranslationsEnum.CZ_EN
 
 main_url = f"https://slovnik.seznam.cz/preklad/{target_language}/" \

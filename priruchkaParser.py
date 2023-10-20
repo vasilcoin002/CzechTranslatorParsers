@@ -13,7 +13,7 @@ def get_filtered_text(dom_elem):
         return text
 
 
-word_to_translate = "máš"
+word_to_translate = "natočen"
 
 necessary_criteria = [
     "",  # The first row always
@@ -41,7 +41,11 @@ req = requests.get(main_link, headers=headers)
 soup = BeautifulSoup(req.text, "html.parser")
 
 results = {}
-infinitive_form = soup.find(class_="hlavicka").find("strong").text
+try:
+    infinitive_form = soup.find(class_="hlavicka").find("strong").text
+except:
+    infinitive_form = "ERROR"
+
 results["title"] = infinitive_form
 descriptions = soup.find_all(class_="polozky")
 results["description"] = []
