@@ -16,17 +16,23 @@ class TranslationsEnum:
 
 necessary_criteria = [
     "Podstatné jméno",
+    "Podstatné jméno, rod ženský",
+    "Podstatné jméno, rod mužský",
+    "Podstatné jméno, rod střední",
     "Přídavné jméno",
     "Sloveso",
+    "Nedokonavé sloveso",
+    "Dokonavé sloveso"
     "Příslovce",
+    "Spojka",
+    "Částice",
+    "Předložka",
     "Fráze",
     "Synonyma",
     "Antonyma",
-    "Nedokonavé sloveso",
-    "Dokonavé sloveso"
 ]
 # Parameters
-word_to_translate = "vrátit"
+word_to_translate = "potřeba"
 target_language = TranslationsEnum.CZ_EN
 
 main_url = f"https://slovnik.seznam.cz/preklad/{target_language}/" \
