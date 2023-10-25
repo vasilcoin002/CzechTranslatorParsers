@@ -27,6 +27,7 @@ necessary_criteria = [
     "Spojka",
     "Částice",
     "Předložka",
+    "Phr",
     "Fráze",
     "Synonyma",
     "Antonyma",
