@@ -12,6 +12,8 @@ class TextTypes:
 class TranslationsEnum:
     EN_CZ = "anglicky_cesky"
     CZ_EN = "cesky_anglicky"
+    UK_CZ = "ukrajinsky_cesky"
+    CZ_UK = "cesky_ukrajinsky"
 
 
 necessary_criteria = [
@@ -27,14 +29,13 @@ necessary_criteria = [
     "Spojka",
     "Částice",
     "Předložka",
-    "Phr",
     "Fráze",
     "Synonyma",
     "Antonyma",
 ]
 # Parameters
-word_to_translate = "potřeba"
-target_language = TranslationsEnum.CZ_EN
+word_to_translate = "dům"
+target_language = TranslationsEnum.CZ_UK
 
 main_url = f"https://slovnik.seznam.cz/preklad/{target_language}/" \
            + "%20".join(word_to_translate.split())  # adding spaces
