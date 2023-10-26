@@ -16,15 +16,19 @@ class TranslationsEnum:
     CZ_UK = "cesky_ukrajinsky"
 
 
+def check_title(title):
+    # Checking for necessary criteria in title
+    for language_part in necessary_criteria:
+        if language_part in title:
+            return True
+    # If not found
+    return False
+
+
 necessary_criteria = [
     "Podstatné jméno",
-    "Podstatné jméno, rod ženský",
-    "Podstatné jméno, rod mužský",
-    "Podstatné jméno, rod střední",
     "Přídavné jméno",
     "Sloveso",
-    "Nedokonavé sloveso",
-    "Dokonavé sloveso"
     "Příslovce",
     "Spojka",
     "Částice",
@@ -33,9 +37,10 @@ necessary_criteria = [
     "Synonyma",
     "Antonyma",
 ]
+
 # Parameters
 word_to_translate = "dům"
-target_language = TranslationsEnum.CZ_UK
+target_language = TranslationsEnum.CZ_EN
 
 main_url = f"https://slovnik.seznam.cz/preklad/{target_language}/" \
            + "%20".join(word_to_translate.split())  # adding spaces
@@ -54,7 +59,7 @@ except AttributeError:
 result = {}
 for article in translatePage_articles:
     title = article.find("h2").text
-    if title in necessary_criteria and title not in ["Synonyma", "Antonyma"]:
+    if (title in necessary_criteria or check_title(title)) and title not in ["Synonyma", "Antonyma"]:
         # print(title)
         result[title] = []
         list_items = article.find_all("li")
@@ -117,3 +122,5 @@ for article in translatePage_articles:
 
 # Final result
 print(result)
+
+check_title("aboba")
