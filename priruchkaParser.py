@@ -13,13 +13,14 @@ def get_filtered_text(dom_elem):
         return text
 
 
-word_to_translate = "natočen"
+word_to_translate = "říct"
 
 necessary_criteria = [
     "",  # The first row always
     "1. osoba",
     "2. osoba",
     "3. osoba",
+    "rozkazovací způsob",
     "příčestí činné",
     "příčestí trpné",
     "1. pád",
