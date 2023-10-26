@@ -122,5 +122,3 @@ for article in translatePage_articles:
 
 # Final result
 print(result)
-
-check_title("aboba")
